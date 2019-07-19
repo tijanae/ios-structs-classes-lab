@@ -23,9 +23,25 @@ Will these three lines of code run? If not, why not?
 fred.name = "Brick"
 fred.weight = 999.2
 fred.homePlanet = "Mars"
+
+```
+```
+//The above code does not run because the home planet is a constant.
 ```
 
 Fix the class definition for `Giant` in the space below so that it **does** work:
+```
+class Giant {
+var name: String = "Fred"
+var weight: Double = 340.0
+var homePlanet: String = "Earth"
+}
+
+let fred = Giant()
+
+// to figure out what was wrong with this code- i ran it in my playground. it produced an error for the let statement which was resolved by switching to var.
+
+```
 
 
 ## Question 2
@@ -48,8 +64,21 @@ bilbo.name = "Jake"
 bilbo.height = 1.42
 bilbo.homePlanet = "Saturn"
 ```
+```
+this code does not run because the let statement prevents the structure from being able to change. 
+```
 
 Change the declaration of `bilbo` so that the above three lines of code **do** work:
+
+```
+struct Alien {
+
+var name: String
+var height: Double
+var homePlanet: String
+}
+var bilbo = Alien(name: "Bilbo", height: 1.67, homePlanet: "Venus")
+```
 
 
 ## Question 3
@@ -65,6 +94,10 @@ jason.name = "Jason"
 
 What will the value of `edgar.name` be after those three lines of code are run? What will the value of `jason.name` be? Why?
 
+```
+// this will print as Jason- because by the time the information is being asked by the print statement it has been rewritten as jason.
+```
+
 
 ## Question 4
 
@@ -77,6 +110,10 @@ charlesFromJupiter.homePlanet = "Jupiter"
 ```
 
 What will the value of `charles.homePlanet` be after the above code run? What about the value of `charlesFromJupiter.homePlanet`? Why?
+
+```
+charles.homeplanet will equal pluto because it is its own space in memory. charlesfromJupiter is from jupiter
+```
 
 
 ## Question 5
@@ -100,6 +137,10 @@ struct BankAccount {
 
 Does this code work? Why or why not?
 
+```
+as this is a structure- it must be coded to mutate.
+```
+
 Fix the `BankAccount` struct so it does work.
 
 Given the code below (which should incorporate any fixes you made):
@@ -111,6 +152,10 @@ joeAccount.withdraw(50.0)
 ```
 
 What will the value of `joeAccount.balance` be after the above code runs? What about the value of `joeOtherAccount.balance`? Why?
+
+```
+joeAccount.balance will be $50, joe other balance will still be 100$ as it is its own seperate accnt. 
+```
 
 
 ## Question 6
